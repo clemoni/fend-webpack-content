@@ -1,24 +1,5 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/client/index.js":
-/*!*****************************!*\
-  !*** ./src/client/index.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../client/js/nameChecker */ \"./src/client/js/nameChecker.js\");\n/* harmony import */ var _client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_formHandler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/formHandler */ \"./src/client/js/formHandler.js\");\n/* harmony import */ var _js_formHandler__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_formHandler__WEBPACK_IMPORTED_MODULE_1__);\n\n\n// const json = require(\"./file.json\");\n\nconsole.log(_client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0__.checkForName);\n\n// alert(\"I EXIST\");\n\n\n//# sourceURL=webpack://example-project/./src/client/index.js?");
-
-/***/ }),
 
 /***/ "./src/client/js/formHandler.js":
 /*!**************************************!*\
@@ -26,7 +7,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _cli
   \**************************************/
 /***/ (() => {
 
-eval("function handleSubmit(event) {\n    event.preventDefault()\n\n    // check what text was put into the form field\n    let formText = document.getElementById('name').value\n    checkForName(formText)\n\n    console.log(\"::: Form Submitted :::\")\n    fetch('http://localhost:8080/test')\n    .then(res => res.json())\n    .then(function(res) {\n        document.getElementById('results').innerHTML = res.message\n    })\n}\n\n\n//# sourceURL=webpack://example-project/./src/client/js/formHandler.js?");
+function handleSubmit(event) {
+    event.preventDefault()
+
+    // check what text was put into the form field
+    let formText = document.getElementById('name').value
+    checkForName(formText)
+
+    console.log("::: Form Submitted :::")
+    fetch('http://localhost:8080/test')
+    .then(res => res.json())
+    .then(function(res) {
+        document.getElementById('results').innerHTML = res.message
+    })
+}
+
 
 /***/ }),
 
@@ -36,7 +31,21 @@ eval("function handleSubmit(event) {\n    event.preventDefault()\n\n    // check
   \**************************************/
 /***/ (() => {
 
-eval("function checkForName(inputText) {\n    console.log(\"::: Running checkForName :::\", inputText);\n    let names = [\n        \"Picard\",\n        \"Janeway\",\n        \"Kirk\",\n        \"Archer\",\n        \"Georgiou\"\n    ]\n\n    if(names.includes(inputText)) {\n        alert(\"Welcome, Captain!\")\n    }\n}\n\n\n//# sourceURL=webpack://example-project/./src/client/js/nameChecker.js?");
+function checkForName(inputText) {
+    console.log("::: Running checkForName :::", inputText);
+    let names = [
+        "Picard",
+        "Janeway",
+        "Kirk",
+        "Archer",
+        "Georgiou"
+    ]
+
+    if(names.includes(inputText)) {
+        alert("Welcome, Captain!")
+    }
+}
+
 
 /***/ })
 
@@ -108,11 +117,28 @@ eval("function checkForName(inputText) {\n    console.log(\"::: Running checkFor
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/client/index.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/*!*****************************!*\
+  !*** ./src/client/index.js ***!
+  \*****************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../client/js/nameChecker */ "./src/client/js/nameChecker.js");
+/* harmony import */ var _client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _js_formHandler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/formHandler */ "./src/client/js/formHandler.js");
+/* harmony import */ var _js_formHandler__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_formHandler__WEBPACK_IMPORTED_MODULE_1__);
+
+
+// const json = require("./file.json");
+
+console.log(_client_js_nameChecker__WEBPACK_IMPORTED_MODULE_0__.checkForName);
+
+// alert("I EXIST");
+
+})();
+
 /******/ })()
 ;
+//# sourceMappingURL=main.js.map
